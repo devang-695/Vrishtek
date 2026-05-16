@@ -1,0 +1,40 @@
+---
+title: Prisma migrations in production without downtime
+description: Practical, searchable, and demonstrates real-world experience.
+date: 2023-11-15
+category: PostgreSQL
+readingTime: 7 min read
+author: Devang Sharma
+image: /blog-images/prisma-migrations-hero.jpg # Placeholder
+---
+
+## Seamless Database Evolution
+
+Database migrations are often a source of anxiety for development teams, especially in production environments where downtime is unacceptable. At Vrishtek, we leverage Prisma's powerful migration system to manage our database schema evolution with confidence, ensuring zero-downtime deployments.
+
+### The Challenge of Production Migrations
+
+Traditional SQL migrations can be prone to errors. Manual schema changes, ordering issues, and the risk of data loss or corruption during deployment are constant threats. When you're managing critical user data, a flawed migration can lead to significant outages and a loss of trust.
+
+### How Prisma Streamlines Migrations
+
+Prisma Migrate offers a robust, declarative approach to database schema management. Instead of writing raw SQL scripts, you define your database schema in Prisma's SDL (Schema Definition Language). Prisma then intelligently generates SQL migrations based on the differences between your current schema and your desired state.
+
+Here's our workflow for production migrations:
+
+1.  **Define Schema Changes:** All schema changes are first defined in `schema.prisma`. This declarative approach makes it easy to review and understand what changes are being proposed.
+2.  **Generate Migration:** We use `prisma migrate dev --name <migration_name>` in a development environment to generate a new migration file. This file contains the raw SQL required to apply the changes.
+3.  **Review and Refine:** The generated SQL is carefully reviewed. For complex migrations (e.g., adding a non-nullable column to a large table), we might manually split the migration into multiple steps (e.g., add nullable column, backfill data, make column non-nullable) to ensure an online migration strategy.
+4.  **Deploy with Caution:** In production, migrations are applied using `prisma migrate deploy`. This command applies all pending migrations that haven't yet been executed against the target database. Prisma keeps track of applied migrations in a special `_prisma_migrations` table.
+
+### Zero-Downtime Strategy
+
+Achieving zero-downtime with migrations is critical. Our strategy typically involves:
+
+*   **Roll-forward over Roll-back:** We aim for migrations that are additive or non-breaking. If a breaking change is necessary, we plan a multi-phase deployment.
+*   **Application Code Deployment:** The new version of our application code (which expects the new schema) is deployed *after* the migration has been applied. During a brief window, the old application code might still be running against a slightly newer schema, but this is managed carefully to avoid compatibility issues.
+*   **Staged Rollouts:** For major changes, we use staged rollouts (e.g., canary deployments) to gradually introduce the new application version and observe its behavior with the migrated database.
+
+### Conclusion
+
+Prisma Migrate has significantly reduced the stress and risk associated with database schema evolution. By providing a clear, declarative workflow and the ability to review generated SQL, it empowers our team to make changes confidently, knowing that our production databases will remain stable and available.

@@ -18,9 +18,10 @@ export function HeroSection({
 }) {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-zinc-900 to-zinc-950 dark:from-black dark:to-zinc-950 overflow-hidden pt-20">
-      {/* Background grid effect */}
-      <div className="absolute inset-0 opacity-10 dark:opacity-5">
-        <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/20 to-teal-500/20 blur-3xl" />
+      {/* Animated geometric grid background */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern opacity-5 dark:opacity-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-transparent dark:from-black dark:via-black/80 dark:to-transparent" />
       </div>
 
       <div className="container-max relative z-10 text-center max-w-4xl mx-auto px-4">

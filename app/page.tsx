@@ -124,6 +124,39 @@ export default function Home() {
         ctaHref="/stack"
       />
 
+      {/* Stack Logo Strip */}
+      <section className="bg-zinc-900 dark:bg-black pb-16 md:pb-24">
+        <div className="container-max max-w-3xl">
+          <p className="text-sm text-zinc-400 text-center flex flex-wrap justify-center gap-x-4 gap-y-2">
+            <span className="font-semibold text-zinc-200">React</span>
+            <span>·</span>
+            <span className="font-semibold text-zinc-200">Next.js</span>
+            <span>·</span>
+            <span className="font-semibold text-zinc-200">Node.js</span>
+            <span>·</span>
+            <span className="font-semibold text-zinc-200">Express</span>
+            <span>·</span>
+            <span className="font-semibold text-zinc-200">MongoDB</span>
+            <span>·</span>
+            <span className="font-semibold text-zinc-200">PostgreSQL</span>
+            <span>·</span>
+            <span className="font-semibold text-zinc-200">Prisma</span>
+            <span>·</span>
+            <span className="font-semibold text-zinc-200">TypeScript</span>
+            <span>·</span>
+            <span className="font-semibold text-zinc-200">Redis</span>
+            <span>·</span>
+            <span className="font-semibold text-zinc-200">Docker</span>
+            <span>·</span>
+            <span className="font-semibold text-zinc-200">AWS</span>
+            <span>·</span>
+            <span className="font-semibold text-zinc-200">GitHub Actions</span>
+            <span>·</span>
+            <span className="font-semibold text-zinc-200">Tailwind</span>
+          </p>
+        </div>
+      </section>
+
       {/* How We Work */}
       <section className="section-padding bg-white dark:bg-zinc-950">
         <div className="container-max">

@@ -1,0 +1,60 @@
+---
+title: Building a Chrome Extension with Manifest V3 and React
+description: Rare topic with high SEO value, showcasing breadth.
+date: 2024-01-10
+category: React
+readingTime: 10 min read
+author: Devang Sharma
+image: /blog-images/chrome-extension-hero.jpg # Placeholder
+---
+
+## Modern Chrome Extension Development
+
+Building Chrome extensions has evolved significantly with Manifest V3 (MV3). This new manifest version brings enhanced security, performance, and privacy, but also requires a different approach to development, especially for those accustomed to MV2. At Vrishtek, we’ve successfully navigated this transition, combining the power of React for UI with the best practices of MV3.
+
+### Understanding Manifest V3 Changes
+
+The most impactful changes in MV3 include:
+
+1.  **Service Workers as Background Scripts:** Persistent background pages are replaced by event-driven service workers. These workers are ephemeral and terminate when idle, improving performance and reducing resource consumption. This requires a shift in how long-running tasks and state management are handled.
+2.  **Declarative Net Request API:** Network request modifications (blocking, redirecting) are now handled declaratively through `declarativeNetRequest` instead of the `webRequest` API. This enhances security and privacy by preventing extensions from arbitrarily inspecting network requests.
+3.  **Strict Content Security Policy (CSP):** MV3 enforces stricter CSPs, banning remotely hosted code and requiring all script logic to be bundled within the extension. This improves security by reducing the risk of supply chain attacks.
+4.  **Promise-based APIs:** Many Chrome APIs have been updated to use promises, leading to cleaner, more modern asynchronous code.
+
+### React for the User Interface
+
+We use React to build the extension's user interfaces:
+
+*   **Popup UI:** The small window that appears when you click the extension icon. This is typically a single-page React app.
+*   **Options Page:** A full page where users can configure extension settings. Also a React app.
+*   **Content Scripts:** Scripts injected into web pages to interact with the DOM. React can be used here to render UI directly onto existing pages.
+
+Our setup involves a standard React project (e.g., created with Vite or Create React App, then ejected for custom build config) configured to output separate bundles for each UI component (popup, options, content scripts).
+
+### Service Worker Architecture
+
+Managing state and communication in an MV3 service worker is key.
+
+*   **Message Passing:** Since service workers are ephemeral, state needs to be managed carefully. We use Chrome's message passing API (`chrome.runtime.sendMessage`, `chrome.runtime.onMessage`) to communicate between the popup, content scripts, and the service worker.
+*   **Local Storage:** For persistent, lightweight state, `chrome.storage.local` (promise-based) is our go-to.
+*   **Alarms API:** For tasks that need to run at specific intervals, the `chrome.alarms` API is essential, ensuring the service worker is reactivated only when needed.
+
+### Example: Simple Counter Extension
+
+Let's imagine a simple counter extension.
+
+*   **Popup React App:** Displays the current count and buttons to increment/decrement.
+*   **Service Worker:** Manages the counter value in `chrome.storage.local`. Responds to messages from the popup to update the count.
+*   **Content Script (Optional):** Could display the count on specific web pages.
+
+### Build Process Considerations
+
+Our `webpack` (or `rollup`) configuration is tailored to:
+
+*   Bundle each entry point (popup, options, service worker, content scripts) separately.
+*   Ensure all JavaScript is locally bundled, adhering to MV3's CSP.
+*   Copy `manifest.json` and static assets (`icons.png`) to the build directory.
+
+### Conclusion
+
+Manifest V3 marks a significant leap forward for Chrome extensions, prioritizing security and performance. While it introduces a learning curve, combining its new architecture with a robust UI library like React allows us to build powerful, modern, and user-friendly browser extensions that meet the demands of today's web.

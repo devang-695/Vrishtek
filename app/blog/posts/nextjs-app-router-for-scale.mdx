@@ -1,0 +1,93 @@
+---
+title: How we structure a Next.js App Router project for scale
+description: Opinionated guidance signaling architectural thinking.
+date: 2023-12-01
+category: Next.js
+readingTime: 8 min read
+author: Devang Sharma
+image: /blog-images/nextjs-app-router-hero.jpg # Placeholder
+---
+
+## Building Robust Next.js Applications
+
+The Next.js App Router, introduced in Next.js 13, fundamentally changes how we build web applications. At Vrishtek, we've embraced its paradigm shifts—Server Components, server actions, and nested layouts—to construct scalable, performant, and maintainable applications. Here's an overview of our opinionated project structure.
+
+### 1. Colocation by Feature, Not by Type
+
+Instead of separating `components`, `pages`, `api` directories at the root, we organize files by feature. This means all relevant files for a specific feature (e.g., user authentication, product management, blog posts) live together within a single directory.
+
+```
+app/
+├── (marketing)/
+│   ├── page.tsx          // Homepage
+│   ├── about/
+│   │   └── page.tsx
+│   └── contact/
+│       └── page.tsx
+├── (app)/
+│   ├── dashboard/
+│   │   ├── page.tsx
+│   │   ├── layout.tsx
+│   │   ├── _components/  // Small, feature-specific components
+│   │   ├── _actions.ts   // Server Actions for dashboard
+│   │   └── _hooks.ts     // Client-side hooks
+│   └── settings/
+│       ├── page.tsx
+│       └── _forms.tsx
+├── api/                  // Global API routes (rarely used for App Router)
+├── blog/
+│   ├── page.tsx          // Blog list
+│   ├── [slug]/
+│   │   └── page.tsx      // Individual blog post
+│   └── posts/            // MDX blog posts
+│       ├── post-one.mdx
+│       └── post-two.mdx
+├── lib/                  // Shared utilities, helpers, types (e.g., `fonts.ts`)
+├── components/           // Global, reusable UI components (e.g., `Header.tsx`)
+├── public/
+├── styles/               // Global CSS, Tailwind config
+└── tsconfig.json
+```
+
+This structure improves discoverability and reduces cognitive load when working on a specific feature.
+
+### 2. Strategic Use of Server Components and Client Components
+
+We default to Server Components. They reduce client-side JavaScript, enable direct database access, and improve initial page load performance. Client Components are used only when interactivity (hooks, event listeners) is required.
+
+*   **Server Components:** Fetch data, render static parts of the UI, handle routing.
+*   **Client Components:** Encapsulate interactivity. We pass data down to them from Server Components.
+
+We ensure a clear separation using the `"use client"` directive at the top of client component files.
+
+### 3. Server Actions for Mutations
+
+For data mutations, we strongly prefer Server Actions over traditional API routes. They provide type-safety, simplify form handling, and keep mutations colocated with the components that trigger them.
+
+```typescript
+// app/dashboard/_actions.ts
+"use server";
+
+import { revalidatePath } from "next/cache";
+import { db } from "@/lib/db"; // Direct database access
+
+export async function updateUserSettings(formData: FormData) {
+  const name = formData.get("name") as string;
+  // ... update user settings in DB
+  await db.user.update(...);
+  revalidatePath("/dashboard/settings"); // Clear cache for this path
+}
+```
+
+### 4. Data Fetching Patterns
+
+*   **Server Components:** Direct database/API calls. `async/await` is fully supported.
+*   **Client Components:** Use `TanStack Query` (React Query) for client-side data fetching, caching, and state management. This avoids Redux boilerplate and provides a robust solution for managing asynchronous data.
+
+### 5. Type Safety Everywhere with TypeScript
+
+TypeScript is non-negotiable. From API responses to database schemas (via Prisma), we ensure end-to-end type safety. This catches bugs early and significantly improves developer velocity and code quality.
+
+### Conclusion
+
+The Next.js App Router, when combined with a thoughtful architecture, offers an incredibly powerful platform for modern web development. Our approach prioritizes performance, maintainability, and a developer experience that allows us to build complex applications with confidence.

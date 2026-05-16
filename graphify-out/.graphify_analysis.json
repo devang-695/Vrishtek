@@ -1,0 +1,143 @@
+{
+  "communities": {
+    "0": [
+      "app_contact_page_tsx",
+      "page_handlechange",
+      "page_handlesubmit"
+    ],
+    "1": [
+      "app_layout_tsx",
+      "layout_rootlayout"
+    ],
+    "2": [
+      "app_sitemap_ts",
+      "sitemap_sitemap"
+    ],
+    "3": [
+      "app_about_page_tsx",
+      "page_aboutpage"
+    ],
+    "4": [
+      "app_api_contact_route_ts",
+      "route_post"
+    ],
+    "5": [
+      "app_blog_page_tsx",
+      "page_getblogposts"
+    ],
+    "6": [
+      "app_blog_slug_page_tsx",
+      "page_blogpostpage"
+    ],
+    "7": [
+      "app_careers_page_tsx",
+      "page_careerspage"
+    ],
+    "8": [
+      "app_stack_page_tsx",
+      "page_stackpage"
+    ],
+    "9": [
+      "components_footer_tsx",
+      "footer_footer"
+    ],
+    "10": [
+      "components_theme_provider_tsx",
+      "theme_provider_themeprovider"
+    ],
+    "11": [
+      "claude_guide",
+      "readme_saas"
+    ],
+    "12": [
+      "next_env_d_ts"
+    ],
+    "13": [
+      "next_config_ts"
+    ],
+    "14": [
+      "postcss_config_mjs"
+    ],
+    "15": [
+      "tailwind_config_ts"
+    ],
+    "16": [
+      "app_page_tsx"
+    ],
+    "17": [
+      "app_services_page_tsx"
+    ],
+    "18": [
+      "app_work_page_tsx"
+    ],
+    "19": [
+      "app_work_slug_page_tsx"
+    ],
+    "20": [
+      "components_header_tsx"
+    ],
+    "21": [
+      "components_sections_tsx"
+    ],
+    "22": [
+      "lib_fonts_ts"
+    ]
+  },
+  "cohesion": {
+    "0": 0.67,
+    "1": 1.0,
+    "2": 1.0,
+    "3": 1.0,
+    "4": 1.0,
+    "5": 1.0,
+    "6": 1.0,
+    "7": 1.0,
+    "8": 1.0,
+    "9": 1.0,
+    "10": 1.0,
+    "11": 1.0,
+    "12": 1.0,
+    "13": 1.0,
+    "14": 1.0,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0,
+    "18": 1.0,
+    "19": 1.0,
+    "20": 1.0,
+    "21": 1.0,
+    "22": 1.0
+  },
+  "gods": [
+    {
+      "id": "readme_saas",
+      "label": "Saas Project",
+      "degree": 1
+    },
+    {
+      "id": "claude_guide",
+      "label": "Claude Integration",
+      "degree": 1
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Saas Project",
+      "target": "Claude Integration",
+      "source_files": [
+        "README.md",
+        "CLAUDE.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories"
+    }
+  ],
+  "questions": [
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `Saas Project`, `Claude Integration` to the rest of the system?",
+      "why": "2 weakly-connected nodes found - possible documentation gaps or missing edges."
+    }
+  ]
+}

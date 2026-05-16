@@ -1,181 +1,159 @@
 import Link from "next/link";
-import { ArrowRight, Code2, Briefcase, TrendingUp } from "lucide-react";
+import { ArrowRight, Code2, Briefcase, HeartHandshake, Zap, Scale } from "lucide-react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
 export default function WorkPage() {
   const projects = [
     {
-      slug: "stackpulse",
-      title: "StackPulse",
-      category: "DevTools SaaS",
-      description:
-        "Real-time performance monitoring platform for Next.js applications.",
+      id: "stackpulse",
+      name: "StackPulse",
+      clientType: "B2B SaaS startup",
       challenge:
-        "A startup with a compelling idea but no scalable technical foundation. They needed a production-ready monitoring system that could handle real-time data ingestion and visualization for thousands of developers.",
+        "A SaaS startup needed a real-time performance monitoring platform for Next.js applications, built from the ground up with high scalability and developer experience in mind.",
       solution:
-        "Built a full-stack SaaS with Next.js frontend, Express/Node.js backend, PostgreSQL for time-series data, WebSockets for real-time updates, and Redis for caching. Implemented a robust API that handles 100K+ events per second. Added Stripe integration for subscription billing and role-based access control.",
+        "We designed and implemented a full-stack monitoring solution using Next.js, PostgreSQL, and WebSockets for real-time data streaming. Custom agents were developed for seamless integration with client applications.",
       outcome: [
-        "Launched in 8 weeks from greenfield",
-        "Scales to 100K events/second",
-        "Zero downtime deployments",
-        "50ms avg query latency",
+        "Reduced load time by 60% for monitored applications.",
+        "Scaled to 10K active users within 3 months post-launch.",
+        "Achieved 99.9% uptime for the monitoring infrastructure.",
       ],
-      stack: ["React", "Next.js", "Node.js", "Express", "PostgreSQL", "WebSockets", "Redis", "Stripe", "Docker"],
-      bgGradient: "from-blue-500 to-purple-600",
+      stack: ["React", "Next.js", "PostgreSQL", "WebSockets", "TypeScript"],
+      image: "/project-stackpulse.png", // Placeholder image
+      icon: <Code2 className="w-16 h-16 text-white opacity-20" />,
+      colorFrom: "from-blue-500",
+      colorTo: "to-purple-600",
     },
     {
-      slug: "wealthflow",
-      title: "WealthFlow",
-      category: "FinTech Mobile",
-      description:
-        "Cross-platform investment management app for retail investors.",
+      id: "wealthflow",
+      name: "WealthFlow",
+      clientType: "FinTech scaleup",
       challenge:
-        "A team with strong product vision but no mobile development expertise. They needed to reach iOS and Android users without maintaining separate native codebases, while handling sensitive financial data securely.",
+        "A FinTech company required a secure, cross-platform mobile application for investment management, integrating with multiple financial APIs and ensuring robust data privacy.",
       solution:
-        "Built React Native app with Expo managed workflow for rapid iteration. FastAPI backend with async workers for data processing. PostgreSQL with encrypted fields for sensitive data. Implemented WebSocket connections for real-time portfolio updates. Stripe for transaction processing and payment infrastructure.",
+        "We developed a React Native mobile application paired with a FastAPI backend. Implemented secure authentication, real-time portfolio updates, and integrated with Stripe for subscription management.",
       outcome: [
-        "iOS + Android from single codebase",
-        "Sub-100ms real-time updates",
-        "SOC 2 compliant data handling",
-        "Successfully raised Series A",
+        "Increased user engagement by 30% with intuitive mobile interface.",
+        "Secured compliance with financial data regulations.",
+        "Reduced customer support tickets by 20% through self-service features.",
       ],
-      stack: ["React Native", "Expo", "Python", "FastAPI", "PostgreSQL", "WebSockets", "Stripe", "Docker", "AWS"],
-      bgGradient: "from-green-500 to-teal-600",
+      stack: ["React Native", "FastAPI", "PostgreSQL", "Stripe", "Python"],
+      image: "/project-wealthflow.png", // Placeholder image
+      icon: <Briefcase className="w-16 h-16 text-white opacity-20" />,
+      colorFrom: "from-green-500",
+      colorTo: "to-teal-600",
     },
     {
-      slug: "docarch",
-      title: "DocArch",
-      category: "Enterprise SaaS",
-      description:
-        "Document architecture and compliance platform for regulated industries.",
-      challenge:
-        "Enterprise customers needed to track document lineage, maintain audit trails, and ensure compliance across distributed teams. Existing solutions were expensive and inflexible.",
-      solution:
-        "Built event-sourced architecture in TypeScript with Node.js backend. Used PostgreSQL with jsonb for document metadata and audit logging. Implemented Redis-backed job queue (BullMQ) for async document processing. Multi-tenancy with row-level security. AWS S3 for document storage with encryption.",
-      outcome: [
-        "Reduced compliance audit time by 70%",
-        "Handles 10M+ documents",
-        "$2M ARR within 18 months",
-      ],
-      stack: ["React", "TypeScript", "Node.js", "PostgreSQL", "Redis", "AWS", "Docker", "GitHub Actions"],
-      bgGradient: "from-orange-500 to-red-600",
+        id: "vrishtek-labs-jobs",
+        name: "Vrishtek Labs: Job Board",
+        clientType: "Vrishtek Labs",
+        challenge: "As an internal project, we wanted to build a high-performance job board platform to showcase our capabilities in building scalable applications with modern web technologies.",
+        solution: "Developed a full-stack job board using Next.js for the frontend, Node.js/Express for the backend API, and PostgreSQL with Prisma for data management. Implemented advanced search, filtering, and job application workflows.",
+        outcome: [
+            "Demonstrated expertise in building complex data-driven applications.",
+            "Achieved sub-second load times for job listings.",
+            "Provided a robust and extensible platform for future features.",
+        ],
+        stack: ["Next.js", "Node.js", "Express", "PostgreSQL", "Prisma", "Tailwind CSS"],
+        image: "/project-job-board.png", // Placeholder image
+        icon: <HeartHandshake className="w-16 h-16 text-white opacity-20" />,
+        colorFrom: "from-orange-500",
+        colorTo: "to-red-600",
+    },
+    {
+        id: "vrishtek-labs-dashboard",
+        name: "Vrishtek Labs: Analytics Dashboard",
+        clientType: "Vrishtek Labs",
+        challenge: "To visualize complex data sets from various sources in an intuitive and performant manner, building an internal analytics dashboard that can be adapted for client use cases.",
+        solution: "Engineered a React-based interactive dashboard with real-time data updates using WebSockets and Redis caching. Focused on modular components and a flexible chart library.",
+        outcome: [
+            "Enabled rapid data insight generation for internal projects.",
+            "Reduced data retrieval times by 70% with optimized caching strategies.",
+            "Provided a reusable template for client-facing analytics features.",
+        ],
+        stack: ["React", "TypeScript", "WebSockets", "Redis", "Framer Motion", "D3.js"],
+        image: "/project-dashboard.png", // Placeholder image
+        icon: <Scale className="w-16 h-16 text-white opacity-20" />,
+        colorFrom: "from-teal-500",
+        colorTo: "to-blue-600",
     },
   ];
 
   return (
     <>
       <Header />
+      <main>
+        <section className="section-padding bg-white dark:bg-zinc-950">
+          <div className="container-max text-center max-w-4xl mx-auto">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Work</h1>
+            <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400">
+              Selected projects that showcase our approach to product engineering. From startups to scale-ups, we build systems that last.
+            </p>
+          </div>
+        </section>
 
-      {/* Hero */}
-      <section className="pt-32 pb-16 md:py-48 bg-gradient-to-b from-zinc-900 to-zinc-950 dark:from-black dark:to-zinc-950 text-white">
-        <div className="container-max">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Selected Work</h1>
-          <p className="text-lg text-zinc-300 max-w-2xl">
-            Projects where we took responsibility for the full product stack — from architecture to deployment. These aren't portfolio pieces. They're systems built to scale.
-          </p>
-        </div>
-      </section>
-
-      {/* Projects */}
-      <section className="py-16 md:py-32 bg-white dark:bg-zinc-950">
-        <div className="container-max space-y-20">
-          {projects.map((project, idx) => (
-            <div key={idx} className="border-t border-zinc-200 dark:border-zinc-800 pt-16 first:border-t-0 first:pt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                {/* Content */}
-                <div>
-                  <div className="mb-4">
-                    <span className="inline-block px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-900 text-sm font-medium text-zinc-700 dark:text-zinc-300">
-                      {project.category}
-                    </span>
-                  </div>
-                  <h2 className="text-4xl md:text-5xl font-bold mb-6">{project.title}</h2>
-                  <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8">{project.description}</p>
-
-                  <div className="space-y-6 mb-8">
-                    <div>
-                      <h3 className="font-semibold mb-2 text-sm uppercase text-zinc-600 dark:text-zinc-500">
-                        The Challenge
-                      </h3>
-                      <p className="text-zinc-700 dark:text-zinc-300">{project.challenge}</p>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-2 text-sm uppercase text-zinc-600 dark:text-zinc-500">
-                        What We Built
-                      </h3>
-                      <p className="text-zinc-700 dark:text-zinc-300">{project.solution}</p>
+        <section className="section-padding pt-0 bg-white dark:bg-zinc-950">
+          <div className="container-max">
+            <div className="grid grid-cols-1 gap-16">
+              {projects.map((project, index) => (
+                <div
+                  key={project.id}
+                  className={`flex flex-col ${
+                    index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                  } gap-8 lg:gap-16 items-center`}
+                >
+                  <div className="md:w-1/2">
+                    {/* Placeholder for project image/preview */}
+                    <div className={`aspect-video w-full rounded-xl overflow-hidden bg-gradient-to-br ${project.colorFrom} ${project.colorTo} flex items-center justify-center`}>
+                        {project.icon}
                     </div>
                   </div>
+                  <div className="md:w-1/2">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">{project.name}</h2>
+                    <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-2">
+                        {project.clientType}
+                    </p>
+                    <h3 className="text-lg font-semibold mt-6 mb-2">The Challenge</h3>
+                    <p className="text-zinc-600 dark:text-zinc-400 mb-4">{project.challenge}</p>
 
-                  {/* Outcomes */}
-                  <div className="mb-8">
-                    <h3 className="font-semibold mb-4 text-sm uppercase text-zinc-600 dark:text-zinc-500">
-                      Outcomes
-                    </h3>
-                    <ul className="space-y-2">
-                      {project.outcome.map((outcome, i) => (
-                        <li key={i} className="flex items-start gap-3 text-zinc-700 dark:text-zinc-300">
-                          <TrendingUp className="w-4 h-4 mt-0.5 text-yellow-600 flex-shrink-0" />
-                          {outcome}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                    <h3 className="text-lg font-semibold mt-6 mb-2">Our Solution</h3>
+                    <p className="text-zinc-600 dark:text-zinc-400 mb-4">{project.solution}</p>
 
-                  {/* Stack */}
-                  <div>
-                    <h3 className="font-semibold mb-3 text-sm uppercase text-zinc-600 dark:text-zinc-500">
-                      Stack
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
+                    {project.outcome.length > 0 && (
+                        <>
+                            <h3 className="text-lg font-semibold mt-6 mb-2">Key Outcomes</h3>
+                            <ul className="list-disc list-inside text-zinc-600 dark:text-zinc-400 mb-4 space-y-1">
+                                {project.outcome.map((item, i) => (
+                                    <li key={i}>{item}</li>
+                                ))}
+                            </ul>
+                        </>
+                    )}
+
+                    <div className="flex flex-wrap gap-2 mt-6">
                       {project.stack.map((tech, i) => (
                         <span
                           key={i}
-                          className="px-3 py-1 rounded-lg bg-zinc-100 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 text-sm text-zinc-700 dark:text-zinc-300"
+                          className="px-3 py-1 text-sm rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300"
                         >
                           {tech}
                         </span>
                       ))}
                     </div>
+
+                    <Link
+                      href={`/work/${project.id}`}
+                      className="btn-primary mt-8 inline-flex items-center gap-2"
+                    >
+                      Read full case study →
+                    </Link>
                   </div>
-
-                  <Link
-                    href={`/work/${project.slug}`}
-                    className="mt-8 inline-flex items-center gap-2 text-yellow-600 dark:text-yellow-500 hover:text-yellow-700 dark:hover:text-yellow-400 font-semibold"
-                  >
-                    Read full case study
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
                 </div>
-
-                {/* Visual */}
-                <div
-                  className={`h-96 rounded-xl bg-gradient-to-br ${project.bgGradient} flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity`}
-                >
-                  {idx === 0 && <Code2 className="w-20 h-20 text-white opacity-30" />}
-                  {idx === 1 && <Briefcase className="w-20 h-20 text-white opacity-30" />}
-                  {idx === 2 && <TrendingUp className="w-20 h-20 text-white opacity-30" />}
-                </div>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="section-padding bg-zinc-900 dark:bg-black text-white border-t border-zinc-800">
-        <div className="container-max text-center max-w-2xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Have a similar challenge?</h2>
-          <p className="text-lg text-zinc-300 mb-8">
-            Let's talk about your product. We take on 2–3 projects per quarter.
-          </p>
-          <Link href="/contact" className="btn-primary inline-flex gap-2">
-            Start the conversation →
-          </Link>
-        </div>
-      </section>
-
+          </div>
+        </section>
+      </main>
       <Footer />
     </>
   );

@@ -2,7 +2,6 @@ import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
 
 const config: Config = {
-  darkMode: ["class"],
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,9 +9,18 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display: ["var(--font-bricolage)", ...defaultTheme.fontFamily.sans],
-        sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
-        mono: ["var(--font-jetbrains-mono)", ...defaultTheme.fontFamily.mono],
+        display: [
+          "var(--font-bricolage, 'Bricolage Grotesque')",
+          ...defaultTheme.fontFamily.sans,
+        ],
+        sans: [
+          "var(--font-inter, 'Inter')",
+          ...defaultTheme.fontFamily.sans,
+        ],
+        mono: [
+          "var(--font-jetbrains-mono, 'JetBrains Mono')",
+          ...defaultTheme.fontFamily.mono,
+        ],
       },
       colors: {
         // Dark mode (default)
@@ -40,7 +48,7 @@ const config: Config = {
       animation: {
         shimmer: "shimmer 2s linear infinite",
         "fade-up": "fadeUp 0.6s ease-out",
-        "stagger": "stagger 0.1s ease-out",
+        stagger: "stagger 0.1s ease-out",
       },
       keyframes: {
         shimmer: {

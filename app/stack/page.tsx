@@ -1,177 +1,207 @@
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
-const stackLayers = [
-  {
-    layer: "FRONTEND",
-    items: [
+export default function StackPage() {
+  const stack = {
+    frontend: [
       {
         name: "Next.js 14 (App Router)",
-        reason:
+        description:
           "Server components reduce client JS. App Router enables streaming and nested layouts that scale. We've been on this since beta.",
       },
       {
         name: "React 18 + TypeScript",
-        reason:
+        description:
           "TypeScript is non-negotiable. It catches bugs before your users do.",
       },
       {
         name: "Tailwind CSS + shadcn/ui",
-        reason:
+        description:
           "Utility-first for velocity. shadcn for components we own, not depend on.",
       },
       {
         name: "TanStack Query",
-        reason:
+        description:
           "Caching, invalidation, and optimistic updates without Redux boilerplate.",
       },
       {
         name: "Framer Motion",
-        reason:
+        description:
           "For animations that feel intentional, not decorative.",
       },
     ],
-  },
-  {
-    layer: "BACKEND",
-    items: [
+    backend: [
       {
-        name: "Node.js + Express",
-        reason:
-          "The JavaScript runtime we know deeply. Fast, battle-tested, production-ready.",
+        name: "Node.js + Express (or Fastify for high-throughput)",
+        description:
+          "The JavaScript runtime we know deeply. Fastify when latency matters.",
       },
       {
         name: "Python FastAPI",
-        reason:
+        description:
           "For AI/ML endpoints and data-heavy services. Async-native, typed, fast.",
       },
       {
         name: "PostgreSQL",
-        reason:
+        description:
           "Our default database. ACID compliance, JSONB when schema flexibility matters, PostGIS when location matters. We do not reach for MongoDB first.",
       },
       {
         name: "Prisma ORM",
-        reason:
+        description:
           "Schema-as-code. Migrations in version control. Type-safe queries. The query builder we would design ourselves if we had to.",
       },
       {
         name: "Redis",
-        reason:
+        description:
           "Caching, BullMQ job queues, WebSocket presence. Not a primary database.",
       },
       {
         name: "WebSockets (ws / Socket.io)",
-        reason:
+        description:
           "For real-time features where polling is not acceptable.",
       },
     ],
-  },
-  {
-    layer: "MOBILE",
-    items: [
+    mobile: [
       {
         name: "React Native + Expo",
-        reason:
+        description:
           "One codebase, two platforms. Expo managed workflow unless the project demands bare. We do not build separate native apps unless you have a 10-person mobile team to maintain them.",
       },
     ],
-  },
-  {
-    layer: "INFRASTRUCTURE",
-    items: [
+    infrastructure: [
       {
         name: "Docker + Docker Compose",
-        reason:
+        description:
           "Every project runs identically in dev, staging, and production. 'Works on my machine' is not a sentence we say.",
       },
       {
         name: "AWS (EC2 / ECS Fargate / RDS / S3 / CloudFront / SES)",
-        reason:
+        description:
           "We know AWS. We do not over-architect — we use the right service, not the most impressive one.",
       },
       {
         name: "GitHub Actions",
-        reason:
+        description:
           "CI/CD on every PR. Lint, type-check, test, build, deploy — automated from day one, not added six months later.",
       },
       {
         name: "Vercel",
-        reason:
+        description:
           "For Next.js frontends where Vercel's edge network is the right call. We choose between ECS and Vercel based on the project, not habit.",
       },
     ],
-  },
-  {
-    layer: "AI INTEGRATION",
-    items: [
+    aiIntegration: [
       {
         name: "Anthropic Claude API",
-        reason:
+        description:
           "Our preferred LLM for text generation, summarization, and structured output. We prompt-engineer, version control prompts, and cap token spend.",
       },
       {
-        name: "OpenAI API",
-        reason:
+        name: "OpenAI API (when required)",
+        description:
           "For embeddings and cases where the client specifies GPT.",
       },
       {
-        name: "LangChain (Selectively)",
-        reason:
+        name: "LangChain (selectively)",
+        description:
           "We use it when the agent complexity justifies it. We do not add it to every AI feature just because it exists.",
       },
     ],
-  },
-];
+  };
 
-export default function StackPage() {
   return (
     <>
       <Header />
-
-      {/* Hero */}
-      <section className="pt-32 pb-16 md:py-48 bg-gradient-to-b from-zinc-900 to-zinc-950 dark:from-black dark:to-zinc-950 text-white">
-        <div className="container-max">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">What We Build With</h1>
-          <p className="text-lg text-zinc-300 max-w-2xl">
-            Technical decisions are product decisions. Here is how we think about our tools.
-          </p>
-        </div>
-      </section>
-
-      {/* Stack */}
-      <section className="py-16 md:py-32 bg-white dark:bg-zinc-950">
-        <div className="container-max">
-          <div className="space-y-16">
-            {stackLayers.map((layer, idx) => (
-              <div key={idx} className="border-t border-zinc-200 dark:border-zinc-800 pt-12 first:border-t-0 first:pt-0">
-                <h2 className="text-2xl md:text-3xl font-bold mb-8 text-yellow-600 dark:text-yellow-500">
-                  {layer.layer}
-                </h2>
-
-                <div className="space-y-6">
-                  {layer.items.map((item, i) => (
-                    <div key={i} className="pb-6 border-b border-zinc-200 dark:border-zinc-800 last:border-b-0">
-                      <h3 className="font-semibold text-lg mb-2">{item.name}</h3>
-                      <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                        {item.reason}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Footer note */}
-          <div className="mt-16 pt-12 border-t border-zinc-200 dark:border-zinc-800">
-            <p className="text-center text-zinc-600 dark:text-zinc-400 italic max-w-2xl mx-auto">
-              "We do not add tools to seem impressive. We remove tools whenever possible. Complexity is a liability we charge your users for every request."
+      <main>
+        <section className="section-padding bg-white dark:bg-zinc-950">
+          <div className="container-max text-center max-w-4xl mx-auto">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+              What we build with — and why.
+            </h1>
+            <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400">
+              Technical decisions are product decisions. Here is how we think about our tools.
             </p>
           </div>
-        </div>
-      </section>
+        </section>
 
+        <section className="section-padding pt-0 bg-white dark:bg-zinc-950">
+          <div className="container-max grid grid-cols-1 gap-16 md:gap-24">
+            {/* Frontend */}
+            <div>
+              <h2 className="text-4xl font-bold mb-8 text-yellow-600">Frontend</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
+                {stack.frontend.map((tech, idx) => (
+                  <div key={idx}>
+                    <h3 className="text-2xl font-semibold mb-2">{tech.name}</h3>
+                    <p className="text-zinc-600 dark:text-zinc-400">{tech.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Backend */}
+            <div>
+              <h2 className="text-4xl font-bold mb-8 text-yellow-600">Backend</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
+                {stack.backend.map((tech, idx) => (
+                  <div key={idx}>
+                    <h3 className="text-2xl font-semibold mb-2">{tech.name}</h3>
+                    <p className="text-zinc-600 dark:text-zinc-400">{tech.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile */}
+            <div>
+              <h2 className="text-4xl font-bold mb-8 text-yellow-600">Mobile</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
+                {stack.mobile.map((tech, idx) => (
+                  <div key={idx}>
+                    <h3 className="text-2xl font-semibold mb-2">{tech.name}</h3>
+                    <p className="text-zinc-600 dark:text-zinc-400">{tech.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Infrastructure */}
+            <div>
+              <h2 className="text-4xl font-bold mb-8 text-yellow-600">Infrastructure</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
+                {stack.infrastructure.map((tech, idx) => (
+                  <div key={idx}>
+                    <h3 className="text-2xl font-semibold mb-2">{tech.name}</h3>
+                    <p className="text-zinc-600 dark:text-zinc-400">{tech.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* AI Integration */}
+            <div>
+              <h2 className="text-4xl font-bold mb-8 text-yellow-600">AI Integration</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
+                {stack.aiIntegration.map((tech, idx) => (
+                  <div key={idx}>
+                    <h3 className="text-2xl font-semibold mb-2">{tech.name}</h3>
+                    <p className="text-zinc-600 dark:text-zinc-400">{tech.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Honest Note */}
+            <div className="text-center mt-16 max-w-2xl mx-auto">
+              <p className="text-lg text-zinc-600 dark:text-zinc-400 italic">
+                "We do not add tools to seem impressive. We remove tools whenever possible.
+                Complexity is a liability we charge your users for every request."
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
       <Footer />
     </>
   );

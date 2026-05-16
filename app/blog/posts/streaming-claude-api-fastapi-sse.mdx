@@ -1,0 +1,104 @@
+---
+title: Streaming Claude API responses with FastAPI and SSE
+description: AI and backend integration directly relevant to the current market.
+date: 2024-02-20
+category: AI Engineering
+readingTime: 9 min read
+author: Devang Sharma
+image: /blog-images/claude-streaming-hero.jpg # Placeholder
+---
+
+## Real-time AI Interactions with FastAPI and SSE
+
+In the era of large language models (LLMs), providing real-time, streaming responses enhances the user experience significantly. Users don't want to wait seconds for an entire AI-generated response to appear; they prefer to see text being generated word by word. At Vrishtek, we achieve this by combining Python's FastAPI with Server-Sent Events (SSE) to stream responses from APIs like Anthropic's Claude.
+
+### Why Streaming?
+
+*   **Improved UX:** Users perceive the application as faster and more responsive.
+*   **Reduced Latency Perception:** Even if the total generation time is the same, incremental delivery feels quicker.
+*   **Partial Responses:** Useful for applications where partial information can be displayed or acted upon immediately.
+
+### Server-Sent Events (SSE) vs. WebSockets
+
+While WebSockets are a powerful tool for full-duplex, real-time communication, SSE offers a simpler, more lightweight solution when the communication is primarily unidirectional (server to client). For streaming LLM responses, where the server is pushing data to the client, SSE is often a more suitable and easier-to-implement choice.
+
+### FastAPI for the Backend
+
+FastAPI is an excellent choice for building AI backends due to its:
+
+*   **Asynchronous Support:** Built on `asyncio`, it handles concurrent requests efficiently, which is crucial when dealing with potentially long-running LLM API calls.
+*   **Type Hinting:** Provides robust data validation and serialization out of the box, ensuring that API requests and responses are correctly structured.
+*   **Performance:** Extremely fast, thanks to Starlette and Pydantic.
+
+Here's a simplified example of streaming a Claude response with FastAPI:
+
+```python
+# main.py
+from fastapi import FastAPI
+from fastapi.responses import StreamingResponse
+import anthropic
+import asyncio
+
+app = FastAPI()
+client = anthropic.Anthropic() # Ensure your ANTHROPIC_API_KEY is set in environment variables
+
+async def generate_claude_response(prompt: str):
+    with client.messages.stream(
+        model="claude-3-opus-20240229",
+        max_tokens=1024,
+        messages=[{"role": "user", "content": prompt}],
+    ) as stream:
+        for chunk in stream.text_stream:
+            yield f"data: {chunk}
+
+"
+            await asyncio.sleep(0.01) # Simulate some processing delay
+
+@app.get("/stream-chat/")
+async def stream_chat(prompt: str = "Hello, Claude!"):
+    return StreamingResponse(generate_claude_response(prompt), media_type="text/event-stream")
+
+```
+
+### Client-Side Integration
+
+On the frontend (e.g., a Next.js React application), consuming an SSE stream is straightforward using the `EventSource` API:
+
+```javascript
+// React component example
+import React, { useState, useEffect } from 'react';
+
+function ChatStream() {
+  const [response, setResponse] = useState('');
+
+  useEffect(() => {
+    const eventSource = new EventSource('http://localhost:8000/stream-chat/?prompt=Tell me a story about a brave knight.');
+
+    eventSource.onmessage = (event) => {
+      setResponse((prev) => prev + event.data);
+    };
+
+    eventSource.onerror = (error) => {
+      console.error('EventSource failed:', error);
+      eventSource.close();
+    };
+
+    return () => {
+      eventSource.close();
+    };
+  }, []);
+
+  return (
+    <div>
+      <h2>AI Response:</h2>
+      <p>{response}</p>
+    </div>
+  );
+}
+
+export default ChatStream;
+```
+
+### Conclusion
+
+Streaming LLM responses is a powerful pattern for building highly responsive AI applications. By leveraging FastAPI's async capabilities and the simplicity of Server-Sent Events, we can deliver a superior user experience, making AI interactions feel truly real-time. This approach is a cornerstone of how we build engaging AI-powered products at Vrishtek.

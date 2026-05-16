@@ -1,0 +1,486 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "next-env.d.ts",
+      "file_type": "code",
+      "source_file": "next-env.d.ts",
+      "source_location": "L1",
+      "id": "next_env_d_ts",
+      "community": 12,
+      "norm_label": "next-env.d.ts"
+    },
+    {
+      "label": "next.config.ts",
+      "file_type": "code",
+      "source_file": "next.config.ts",
+      "source_location": "L1",
+      "id": "next_config_ts",
+      "community": 13,
+      "norm_label": "next.config.ts"
+    },
+    {
+      "label": "postcss.config.mjs",
+      "file_type": "code",
+      "source_file": "postcss.config.mjs",
+      "source_location": "L1",
+      "id": "postcss_config_mjs",
+      "community": 14,
+      "norm_label": "postcss.config.mjs"
+    },
+    {
+      "label": "tailwind.config.ts",
+      "file_type": "code",
+      "source_file": "tailwind.config.ts",
+      "source_location": "L1",
+      "id": "tailwind_config_ts",
+      "community": 15,
+      "norm_label": "tailwind.config.ts"
+    },
+    {
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "app\\layout.tsx",
+      "source_location": "L1",
+      "id": "app_layout_tsx",
+      "community": 1,
+      "norm_label": "layout.tsx"
+    },
+    {
+      "label": "RootLayout()",
+      "file_type": "code",
+      "source_file": "app\\layout.tsx",
+      "source_location": "L45",
+      "id": "layout_rootlayout",
+      "community": 1,
+      "norm_label": "rootlayout()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app\\page.tsx",
+      "source_location": "L1",
+      "id": "app_page_tsx",
+      "community": 16,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "sitemap.ts",
+      "file_type": "code",
+      "source_file": "app\\sitemap.ts",
+      "source_location": "L1",
+      "id": "app_sitemap_ts",
+      "community": 2,
+      "norm_label": "sitemap.ts"
+    },
+    {
+      "label": "sitemap()",
+      "file_type": "code",
+      "source_file": "app\\sitemap.ts",
+      "source_location": "L3",
+      "id": "sitemap_sitemap",
+      "community": 2,
+      "norm_label": "sitemap()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app\\about\\page.tsx",
+      "source_location": "L1",
+      "id": "app_about_page_tsx",
+      "community": 3,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "AboutPage()",
+      "file_type": "code",
+      "source_file": "app\\about\\page.tsx",
+      "source_location": "L6",
+      "id": "page_aboutpage",
+      "community": 3,
+      "norm_label": "aboutpage()"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "app\\api\\contact\\route.ts",
+      "source_location": "L1",
+      "id": "app_api_contact_route_ts",
+      "community": 4,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "app\\api\\contact\\route.ts",
+      "source_location": "L3",
+      "id": "route_post",
+      "community": 4,
+      "norm_label": "post()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app\\blog\\page.tsx",
+      "source_location": "L1",
+      "id": "app_blog_page_tsx",
+      "community": 5,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "getBlogPosts()",
+      "file_type": "code",
+      "source_file": "app\\blog\\page.tsx",
+      "source_location": "L18",
+      "id": "page_getblogposts",
+      "community": 5,
+      "norm_label": "getblogposts()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app\\blog\\[slug]\\page.tsx",
+      "source_location": "L1",
+      "id": "app_blog_slug_page_tsx",
+      "community": 6,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "BlogPostPage()",
+      "file_type": "code",
+      "source_file": "app\\blog\\[slug]\\page.tsx",
+      "source_location": "L253",
+      "id": "page_blogpostpage",
+      "community": 6,
+      "norm_label": "blogpostpage()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app\\careers\\page.tsx",
+      "source_location": "L1",
+      "id": "app_careers_page_tsx",
+      "community": 7,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "CareersPage()",
+      "file_type": "code",
+      "source_file": "app\\careers\\page.tsx",
+      "source_location": "L6",
+      "id": "page_careerspage",
+      "community": 7,
+      "norm_label": "careerspage()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app\\contact\\page.tsx",
+      "source_location": "L1",
+      "id": "app_contact_page_tsx",
+      "community": 0,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "handleChange()",
+      "file_type": "code",
+      "source_file": "app\\contact\\page.tsx",
+      "source_location": "L23",
+      "id": "page_handlechange",
+      "community": 0,
+      "norm_label": "handlechange()"
+    },
+    {
+      "label": "handleSubmit()",
+      "file_type": "code",
+      "source_file": "app\\contact\\page.tsx",
+      "source_location": "L32",
+      "id": "page_handlesubmit",
+      "community": 0,
+      "norm_label": "handlesubmit()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app\\services\\page.tsx",
+      "source_location": "L1",
+      "id": "app_services_page_tsx",
+      "community": 17,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app\\stack\\page.tsx",
+      "source_location": "L1",
+      "id": "app_stack_page_tsx",
+      "community": 8,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "StackPage()",
+      "file_type": "code",
+      "source_file": "app\\stack\\page.tsx",
+      "source_location": "L4",
+      "id": "page_stackpage",
+      "community": 8,
+      "norm_label": "stackpage()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app\\work\\page.tsx",
+      "source_location": "L1",
+      "id": "app_work_page_tsx",
+      "community": 18,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "app\\work\\[slug]\\page.tsx",
+      "source_location": "L1",
+      "id": "app_work_slug_page_tsx",
+      "community": 19,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "footer.tsx",
+      "file_type": "code",
+      "source_file": "components\\footer.tsx",
+      "source_location": "L1",
+      "id": "components_footer_tsx",
+      "community": 9,
+      "norm_label": "footer.tsx"
+    },
+    {
+      "label": "Footer()",
+      "file_type": "code",
+      "source_file": "components\\footer.tsx",
+      "source_location": "L4",
+      "id": "footer_footer",
+      "community": 9,
+      "norm_label": "footer()"
+    },
+    {
+      "label": "header.tsx",
+      "file_type": "code",
+      "source_file": "components\\header.tsx",
+      "source_location": "L1",
+      "id": "components_header_tsx",
+      "community": 20,
+      "norm_label": "header.tsx"
+    },
+    {
+      "label": "sections.tsx",
+      "file_type": "code",
+      "source_file": "components\\sections.tsx",
+      "source_location": "L1",
+      "id": "components_sections_tsx",
+      "community": 21,
+      "norm_label": "sections.tsx"
+    },
+    {
+      "label": "theme-provider.tsx",
+      "file_type": "code",
+      "source_file": "components\\theme-provider.tsx",
+      "source_location": "L1",
+      "id": "components_theme_provider_tsx",
+      "community": 10,
+      "norm_label": "theme-provider.tsx"
+    },
+    {
+      "label": "ThemeProvider()",
+      "file_type": "code",
+      "source_file": "components\\theme-provider.tsx",
+      "source_location": "L7",
+      "id": "theme_provider_themeprovider",
+      "community": 10,
+      "norm_label": "themeprovider()"
+    },
+    {
+      "label": "fonts.ts",
+      "file_type": "code",
+      "source_file": "lib\\fonts.ts",
+      "source_location": "L1",
+      "id": "lib_fonts_ts",
+      "community": 22,
+      "norm_label": "fonts.ts"
+    },
+    {
+      "label": "Saas Project",
+      "file_type": "document",
+      "source_file": "README.md",
+      "id": "readme_saas",
+      "community": 11,
+      "norm_label": "saas project"
+    },
+    {
+      "label": "Claude Integration",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "id": "claude_guide",
+      "community": 11,
+      "norm_label": "claude integration"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app\\layout.tsx",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_src": "app_layout_tsx",
+      "_tgt": "layout_rootlayout",
+      "source": "app_layout_tsx",
+      "target": "layout_rootlayout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app\\sitemap.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "app_sitemap_ts",
+      "_tgt": "sitemap_sitemap",
+      "source": "app_sitemap_ts",
+      "target": "sitemap_sitemap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app\\about\\page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "app_about_page_tsx",
+      "_tgt": "page_aboutpage",
+      "source": "app_about_page_tsx",
+      "target": "page_aboutpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app\\api\\contact\\route.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "app_api_contact_route_ts",
+      "_tgt": "route_post",
+      "source": "app_api_contact_route_ts",
+      "target": "route_post",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app\\blog\\page.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "app_blog_page_tsx",
+      "_tgt": "page_getblogposts",
+      "source": "app_blog_page_tsx",
+      "target": "page_getblogposts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app\\blog\\[slug]\\page.tsx",
+      "source_location": "L253",
+      "weight": 1.0,
+      "_src": "app_blog_slug_page_tsx",
+      "_tgt": "page_blogpostpage",
+      "source": "app_blog_slug_page_tsx",
+      "target": "page_blogpostpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app\\careers\\page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "app_careers_page_tsx",
+      "_tgt": "page_careerspage",
+      "source": "app_careers_page_tsx",
+      "target": "page_careerspage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app\\contact\\page.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_src": "app_contact_page_tsx",
+      "_tgt": "page_handlechange",
+      "source": "app_contact_page_tsx",
+      "target": "page_handlechange",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app\\contact\\page.tsx",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_src": "app_contact_page_tsx",
+      "_tgt": "page_handlesubmit",
+      "source": "app_contact_page_tsx",
+      "target": "page_handlesubmit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app\\stack\\page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "app_stack_page_tsx",
+      "_tgt": "page_stackpage",
+      "source": "app_stack_page_tsx",
+      "target": "page_stackpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components\\footer.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "components_footer_tsx",
+      "_tgt": "footer_footer",
+      "source": "components_footer_tsx",
+      "target": "footer_footer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components\\theme-provider.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "components_theme_provider_tsx",
+      "_tgt": "theme_provider_themeprovider",
+      "source": "components_theme_provider_tsx",
+      "target": "theme_provider_themeprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "README.md",
+      "_src": "readme_saas",
+      "_tgt": "claude_guide",
+      "source": "readme_saas",
+      "target": "claude_guide"
+    }
+  ],
+  "hyperedges": []
+}
