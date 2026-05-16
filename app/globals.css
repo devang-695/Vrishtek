@@ -1,26 +1,129 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* Dark mode (default) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --vrishtek-bg: #09090b;
+  --vrishtek-surface: #18181b;
+  --vrishtek-border: #27272a;
+  --vrishtek-text-primary: #fafafa;
+  --vrishtek-text-muted: #71717a;
+  --vrishtek-accent: #d4a853;
+  --vrishtek-accent-hover: #e8bc6a;
+  --vrishtek-teal: #14b8a6;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --vrishtek-bg: #ffffff;
+    --vrishtek-surface: #f4f4f5;
+    --vrishtek-border: #e4e4e7;
+    --vrishtek-text-primary: #09090b;
+    --vrishtek-text-muted: #71717a;
+    --vrishtek-accent: #b8902a;
+    --vrishtek-teal: #0d9488;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  body {
+    @apply antialiased font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  p {
+    @apply text-base md:text-lg leading-relaxed;
+  }
+
+  code {
+    @apply font-mono text-sm;
+  }
+}
+
+@layer components {
+  .container-max {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .gold-shimmer {
+    background: linear-gradient(
+      90deg,
+      var(--vrishtek-accent) 0%,
+      var(--vrishtek-accent-hover) 50%,
+      var(--vrishtek-accent) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-200;
+    @apply bg-zinc-900 text-white dark:bg-zinc-50 dark:text-zinc-950;
+    @apply hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-200;
+    @apply border-2 border-current text-zinc-950 dark:text-zinc-50;
+    @apply hover:shadow-lg;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-200;
+    @apply bg-yellow-600 hover:bg-yellow-700 text-white;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .fade-in {
+    animation: fadeUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .section-fade {
+    @apply fade-in;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
