@@ -11,3 +11,58 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+// Contact form inquiries
+model ContactInquiry {
+  id            String    @id @default(cuid())
+  name          String
+  email         String
+  company       String
+  description   String    @db.Text
+  budget        String?
+  timeline      String?
+  source        String?
+  sourceDetails String?   @db.Text
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  status        String    @default("new") // new, contacted, closed
+  notes         String?   @db.Text
+
+  @@index([email])
+  @@index([createdAt])
+  @@index([status])
+}
+
+// Blog post metadata
+model BlogPost {
+  id          String    @id @default(cuid())
+  slug        String    @unique
+  title       String
+  description String    @db.Text
+  content     String?   @db.Text // Optionally store parsed content
+  author      String
+  date        DateTime
+  category    String
+  readingTime String
+  published   Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  views       Int       @default(0)
+
+  @@index([slug])
+  @@index([published])
+  @@index([category])
+  @@index([date])
+}
+
+// Page view analytics
+model PageView {
+  id        String    @id @default(cuid())
+  path      String
+  referrer  String?
+  userAgent String?   @db.Text
+  createdAt DateTime  @default(now())
+
+  @@index([path])
+  @@index([createdAt])
+}

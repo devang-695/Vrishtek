@@ -71,19 +71,19 @@
 
   .btn-primary {
     @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-200;
-    @apply bg-zinc-900 text-white dark:bg-zinc-50 dark:text-zinc-950;
-    @apply hover:shadow-lg hover:-translate-y-1;
+    @apply bg-amber-600 text-white hover:bg-amber-700;
+    @apply shadow-md hover:shadow-lg hover:-translate-y-0.5;
   }
 
   .btn-secondary {
     @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-200;
-    @apply border-2 border-current text-zinc-950 dark:text-zinc-50;
-    @apply hover:shadow-lg;
+    @apply border border-zinc-300 dark:border-zinc-700 text-zinc-950 dark:text-zinc-50;
+    @apply hover:border-zinc-400 dark:hover:border-zinc-600 hover:shadow-md;
   }
 
   .btn-gold {
     @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-200;
-    @apply bg-yellow-600 hover:bg-yellow-700 text-white;
+    @apply bg-amber-600 hover:bg-amber-700 text-white shadow-md hover:shadow-lg;
   }
 }
 

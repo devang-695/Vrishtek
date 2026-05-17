@@ -14,44 +14,44 @@ export function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800">
+    <header className="sticky top-0 z-50 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-sm border-b border-zinc-200 dark:border-zinc-800">
       <nav className="container-max flex items-center justify-between h-16">
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center">
+          <div className="w-8 h-8 bg-gradient-to-br from-amber-500 to-amber-600 rounded-lg flex items-center justify-center">
             <span className="font-display font-bold text-white text-lg">V</span>
           </div>
-          <span className="font-display font-bold hidden sm:inline">Vrishtek</span>
+          <span className="font-display font-bold hidden sm:inline text-zinc-950 dark:text-white">Vrishtek</span>
         </Link>
 
         <div className="flex items-center gap-8">
-          <div className="hidden md:flex gap-8 text-sm font-medium">
+          <div className="hidden md:flex gap-8 text-sm font-medium text-zinc-900 dark:text-zinc-100">
             <Link
               href="/work"
-              className="hover:text-yellow-600 transition-colors"
+              className="hover:text-amber-600 dark:hover:text-amber-500 transition-colors"
             >
               Work
             </Link>
             <Link
               href="/services"
-              className="hover:text-yellow-600 transition-colors"
+              className="hover:text-amber-600 dark:hover:text-amber-500 transition-colors"
             >
               Services
             </Link>
             <Link
               href="/stack"
-              className="hover:text-yellow-600 transition-colors"
+              className="hover:text-amber-600 dark:hover:text-amber-500 transition-colors"
             >
               Stack
             </Link>
             <Link
               href="/blog"
-              className="hover:text-yellow-600 transition-colors"
+              className="hover:text-amber-600 dark:hover:text-amber-500 transition-colors"
             >
               Blog
             </Link>
             <Link
               href="/about"
-              className="hover:text-yellow-600 transition-colors"
+              className="hover:text-amber-600 dark:hover:text-amber-500 transition-colors"
             >
               About
             </Link>
@@ -59,7 +59,7 @@ export function Header() {
 
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors"
+            className="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors text-zinc-950 dark:text-white"
             aria-label="Toggle theme"
           >
             {mounted ? (

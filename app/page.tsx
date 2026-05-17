@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Code2, Zap, Network, Layers, Users, Briefcase } from "lucide-react";
+import { ArrowRight, Code2, Zap, Network } from "lucide-react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { HeroSection, FeatureCardsSection, TextSection } from "@/components/sections";
@@ -8,107 +8,106 @@ export default function Home() {
   return (
     <>
       <Header />
-      
-      {/* Hero Section */}
+
       <HeroSection
         headline="Engineered with intent."
-        subheadline="Vrishtek builds full-stack digital products for startups and scale-ups who refuse to ship mediocrity."
-        primaryCta="See our work →"
+        subheadline="We build full-stack products for founders who won't ship mediocrity. Full ownership, real results, shipped to production."
+        primaryCta="See our work"
         primaryCtaHref="/work"
         secondaryCta="Start a project"
         secondaryCtaHref="/contact"
       />
 
-      {/* What Vrishtek Does */}
       <FeatureCardsSection
-        headline="What Vrishtek Does"
-        subheadline="We don't do 50 things. We do product engineering exceptionally."
+        headline="What We Build"
+        subheadline="We don't do everything. We do product engineering at the highest level."
         features={[
           {
             title: "Product Engineering",
             description:
-              "We take your idea from napkin to production. Full-stack, tested, documented, deployed.",
-            icon: <Layers className="w-6 h-6" />,
+              "From concept to production. Full-stack, tested, documented, deployed. We think in systems, not components.",
+            icon: <Code2 className="w-6 h-6" />,
           },
           {
-            title: "SaaS Development",
+            title: "SaaS Infrastructure",
             description:
-              "Subscription billing, multi-tenancy, real-time features — we've built the patterns so you don't pay to learn them.",
+              "Multi-tenant auth, billing, real-time features, and observability. We've built these patterns so you don't repeat our mistakes.",
             icon: <Zap className="w-6 h-6" />,
           },
           {
-            title: "API & Systems Design",
+            title: "Systems Design",
             description:
-              "Clean APIs, event-driven architectures, and database schemas that don't need to be redesigned in 6 months.",
+              "APIs that don't need redesigning. Event-driven architectures. Database schemas built to scale. Solid engineering fundamentals.",
             icon: <Network className="w-6 h-6" />,
           },
         ]}
       />
 
-      {/* Selected Work Preview */}
       <section className="section-padding bg-white dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800">
         <div className="container-max">
           <div className="flex items-center justify-between mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold">Selected Work</h2>
+            <h2 className="text-4xl md:text-5xl font-bold">Recent Projects</h2>
             <Link
               href="/work"
-              className="text-yellow-600 hover:text-yellow-700 dark:hover:text-yellow-500 font-semibold flex items-center gap-2"
+              className="text-amber-600 hover:text-amber-700 dark:text-amber-500 dark:hover:text-amber-400 font-semibold flex items-center gap-2 transition-colors"
             >
               View all →
             </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Project 1 */}
-            <div className="group rounded-xl overflow-hidden bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:shadow-lg transition-all cursor-pointer hover:-translate-y-2">
-              <div className="h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-                <Code2 className="w-16 h-16 text-white opacity-20" />
+            <div className="group rounded-xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all hover:shadow-xl">
+              <div className="h-48 bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-br from-zinc-700 to-zinc-800 flex items-center justify-center">
+                  <span className="text-zinc-600 dark:text-zinc-400 font-mono text-sm">StackPulse</span>
+                </div>
               </div>
-              <div className="p-6">
-                <div className="flex gap-2 mb-3">
-                  <span className="text-xs px-2 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300">
+              <div className="p-8">
+                <div className="flex gap-2 mb-4">
+                  <span className="text-xs px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 font-medium">
                     DevTools
                   </span>
-                  <span className="text-xs px-2 py-1 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300">
+                  <span className="text-xs px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 font-medium">
                     SaaS
                   </span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">StackPulse</h3>
-                <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4">
-                  Real-time performance monitoring platform for Next.js applications. Built from greenfield, shipped in 8 weeks.
+                <h3 className="text-xl font-semibold mb-3">StackPulse</h3>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-6 leading-relaxed">
+                  Performance monitoring platform built from greenfield. Real-time dashboards, alert management, and team collaboration features.
                 </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-zinc-500">
+                <div className="flex items-center justify-between pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                  <span className="text-xs text-zinc-500 dark:text-zinc-500 font-mono">
                     React · Next.js · PostgreSQL · WebSockets
                   </span>
-                  <ArrowRight className="w-4 h-4 text-yellow-600 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 text-amber-600 dark:text-amber-500 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             </div>
 
-            {/* Project 2 */}
-            <div className="group rounded-xl overflow-hidden bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:shadow-lg transition-all cursor-pointer hover:-translate-y-2">
-              <div className="h-48 bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
-                <Briefcase className="w-16 h-16 text-white opacity-20" />
+            <div className="group rounded-xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all hover:shadow-xl">
+              <div className="h-48 bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-br from-zinc-700 to-zinc-800 flex items-center justify-center">
+                  <span className="text-zinc-600 dark:text-zinc-400 font-mono text-sm">WealthFlow</span>
+                </div>
               </div>
-              <div className="p-6">
-                <div className="flex gap-2 mb-3">
-                  <span className="text-xs px-2 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300">
+              <div className="p-8">
+                <div className="flex gap-2 mb-4">
+                  <span className="text-xs px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 font-medium">
                     FinTech
                   </span>
-                  <span className="text-xs px-2 py-1 rounded-full bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300">
+                  <span className="text-xs px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 font-medium">
                     Mobile
                   </span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">WealthFlow</h3>
-                <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4">
-                  Cross-platform investment management app for retail investors. React Native + FastAPI backend.
+                <h3 className="text-xl font-semibold mb-3">WealthFlow</h3>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-6 leading-relaxed">
+                  Cross-platform investment platform for retail investors. React Native frontend, Node.js backend, secure payment processing.
                 </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-zinc-500">
+                <div className="flex items-center justify-between pt-4 border-t border-zinc-200 dark:border-zinc-800">
+                  <span className="text-xs text-zinc-500 dark:text-zinc-500 font-mono">
                     React Native · Node.js · PostgreSQL · Stripe
                   </span>
-                  <ArrowRight className="w-4 h-4 text-yellow-600 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 text-amber-600 dark:text-amber-500 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             </div>
@@ -116,86 +115,73 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Tech Philosophy */}
       <TextSection
-        headline="We choose boring infrastructure and exciting products."
-        content="We use proven, production-grade tools — not the framework of the month. PostgreSQL over hype databases. REST before GraphQL unless GraphQL is right. Prisma for schema sanity. TypeScript everywhere. Docker from day one. We move fast because we build on solid ground."
-        cta="Explore our stack →"
+        headline="We build with proven foundations."
+        content="PostgreSQL over hype databases. REST before GraphQL. TypeScript everywhere. Docker from day one. We move fast because we build on solid ground. The tech stack serves the product, never the other way around."
+        cta="Explore our full stack"
         ctaHref="/stack"
       />
 
-      {/* Stack Logo Strip */}
-      <section className="bg-zinc-900 dark:bg-black pb-16 md:pb-24">
+      <section className="bg-black dark:bg-black pb-16 md:pb-24 border-b border-zinc-800">
         <div className="container-max max-w-3xl">
-          <p className="text-sm text-zinc-400 text-center flex flex-wrap justify-center gap-x-4 gap-y-2">
-            <span className="font-semibold text-zinc-200">React</span>
-            <span>·</span>
-            <span className="font-semibold text-zinc-200">Next.js</span>
-            <span>·</span>
-            <span className="font-semibold text-zinc-200">Node.js</span>
-            <span>·</span>
-            <span className="font-semibold text-zinc-200">Express</span>
-            <span>·</span>
-            <span className="font-semibold text-zinc-200">MongoDB</span>
-            <span>·</span>
-            <span className="font-semibold text-zinc-200">PostgreSQL</span>
-            <span>·</span>
-            <span className="font-semibold text-zinc-200">Prisma</span>
-            <span>·</span>
-            <span className="font-semibold text-zinc-200">TypeScript</span>
-            <span>·</span>
-            <span className="font-semibold text-zinc-200">Redis</span>
-            <span>·</span>
-            <span className="font-semibold text-zinc-200">Docker</span>
-            <span>·</span>
-            <span className="font-semibold text-zinc-200">AWS</span>
-            <span>·</span>
-            <span className="font-semibold text-zinc-200">GitHub Actions</span>
-            <span>·</span>
-            <span className="font-semibold text-zinc-200">Tailwind</span>
+          <p className="text-sm text-zinc-500 text-center flex flex-wrap justify-center gap-x-6 gap-y-3">
+            <span className="font-semibold text-zinc-300">React</span>
+            <span className="text-zinc-700">·</span>
+            <span className="font-semibold text-zinc-300">Next.js</span>
+            <span className="text-zinc-700">·</span>
+            <span className="font-semibold text-zinc-300">Node.js</span>
+            <span className="text-zinc-700">·</span>
+            <span className="font-semibold text-zinc-300">PostgreSQL</span>
+            <span className="text-zinc-700">·</span>
+            <span className="font-semibold text-zinc-300">TypeScript</span>
+            <span className="text-zinc-700">·</span>
+            <span className="font-semibold text-zinc-300">Redis</span>
+            <span className="text-zinc-700">·</span>
+            <span className="font-semibold text-zinc-300">Docker</span>
+            <span className="text-zinc-700">·</span>
+            <span className="font-semibold text-zinc-300">AWS</span>
           </p>
         </div>
       </section>
 
-      {/* How We Work */}
       <section className="section-padding bg-white dark:bg-zinc-950">
         <div className="container-max">
-          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">How We Work</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">Our Process</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[
               {
                 step: "01",
-                title: "Discover",
+                title: "Discovery",
                 description:
-                  "One structured call. We understand your problem, not just your feature list. We ask hard questions.",
+                  "We understand your problem deeply. Not just features—the business constraints, technical constraints, and what truly matters.",
               },
               {
                 step: "02",
-                title: "Architect",
+                title: "Architecture",
                 description:
-                  "We propose a technical plan before writing a line of code. You see the system before we build it.",
+                  "Detailed technical plan. You review it before we write code. No surprises, no black boxes, complete alignment.",
               },
               {
                 step: "03",
                 title: "Build",
                 description:
-                  "Weekly demos. GitHub access from day one. No black boxes. You always know where we are.",
+                  "Weekly demos. GitHub access always. You watch the system come together. We iterate based on real feedback.",
               },
               {
                 step: "04",
-                title: "Ship & Support",
+                title: "Launch",
                 description:
-                  "We deploy. We monitor. We fix what breaks. Handoff includes docs, not just a zip file.",
+                  "We deploy. We monitor. We fix what breaks. Handoff includes documentation, runbooks, and ongoing support.",
               },
             ].map((item, idx) => (
               <div key={idx} className="relative">
-                <div className="absolute -left-3 -top-3 w-12 h-12 rounded-full bg-yellow-600 text-white font-bold flex items-center justify-center font-display">
+                <div className="absolute -left-3 -top-3 w-12 h-12 rounded-full bg-amber-600 text-white font-bold flex items-center justify-center font-display text-lg">
                   {item.step}
                 </div>
                 <div className="pt-12 pl-6 pb-6 rounded-xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
                   <h3 className="font-semibold text-lg mb-3">{item.title}</h3>
-                  <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                  <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">
                     {item.description}
                   </p>
                 </div>
@@ -205,55 +191,48 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
       <section className="section-padding bg-zinc-900 dark:bg-black text-white">
         <div className="container-max">
           <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
-            What People Say
+            What our partners say
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 quote:
-                  "Vrishtek didn't just build our MVP — they built it right. The code is clean, the architecture makes sense, and they documented everything. This is how software should be handed over.",
+                  "They didn't just build our MVP. They built it right. The code is clean, the architecture is sound. This is how handoff should work.",
                 author: "Arjun Patel",
                 title: "Founder & CEO",
                 company: "StackPulse",
-                country: "🇮🇳",
               },
               {
                 quote:
-                  "We've worked with many agencies. Vrishtek is different. They think about the system, not just the sprint. They asked questions we weren't even thinking about.",
+                  "Different approach entirely. They ask hard questions about the system, not just the sprint. Forced us to think bigger.",
                 author: "Sarah Chen",
                 title: "Head of Product",
                 company: "TechFlow",
-                country: "🇸🇬",
               },
               {
                 quote:
-                  "The quality of engineering here is exceptional. PostgreSQL, TypeScript, proper testing — this is what credible tech companies look like. Highly recommended.",
+                  "Exceptional engineering quality. PostgreSQL, TypeScript, proper testing. This is what a credible tech partner looks like.",
                 author: "James Murphy",
                 title: "CTO",
                 company: "FinScale",
-                country: "🇬🇧",
               },
             ].map((testimonial, idx) => (
               <div
                 key={idx}
-                className="p-8 rounded-xl bg-zinc-800/50 border border-zinc-700 hover:border-yellow-600/50 transition-colors"
+                className="p-8 rounded-xl bg-zinc-800/40 border border-zinc-700 hover:border-zinc-600 transition-colors"
               >
-                <p className="text-sm mb-6 italic text-zinc-300">
+                <p className="text-sm mb-6 leading-relaxed text-zinc-300">
                   "{testimonial.quote}"
                 </p>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="font-semibold">{testimonial.author}</p>
-                    <p className="text-xs text-zinc-400">
-                      {testimonial.title} · {testimonial.company}
-                    </p>
-                  </div>
-                  <span className="text-lg">{testimonial.country}</span>
+                <div>
+                  <p className="font-semibold text-white">{testimonial.author}</p>
+                  <p className="text-xs text-zinc-500">
+                    {testimonial.title} · {testimonial.company}
+                  </p>
                 </div>
               </div>
             ))}
@@ -261,21 +240,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer CTA */}
       <section className="section-padding bg-white dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800">
         <div className="container-max text-center max-w-2xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Have something to build?
+            Ready to build something real?
           </h2>
-          <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8">
-            We take on 2–3 new projects per quarter. Tell us what you're solving.
+          <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8 font-light leading-relaxed">
+            We take 2–3 projects per quarter. The best work happens when we focus completely on what matters.
           </p>
           <Link href="/contact" className="btn-primary inline-flex gap-2">
-            Start the conversation →
+            Start a conversation
+            <ArrowRight className="w-4 h-4" />
           </Link>
-          <p className="mt-8 text-sm text-zinc-500">
-            Or email us directly:{" "}
-            <a href="mailto:hello@vrishtek.com" className="text-yellow-600 hover:text-yellow-700">
+          <p className="mt-8 text-sm text-zinc-600 dark:text-zinc-500">
+            Or reach out directly:{" "}
+            <a href="mailto:hello@vrishtek.com" className="text-amber-600 dark:text-amber-500 hover:text-amber-700 dark:hover:text-amber-400 font-medium transition-colors">
               hello@vrishtek.com
             </a>
           </p>
