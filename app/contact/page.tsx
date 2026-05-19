@@ -70,7 +70,7 @@ export default function ContactPage() {
               Got it, {formData.name}.
             </h1>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8">
-              You'll hear from Devang within 24 hours with initial thoughts — not a sales pitch.
+              You'll hear from Devang within 24 hours with initial thoughts - not a sales pitch.
             </p>
 
             <div className="bg-zinc-50 dark:bg-zinc-900 rounded-xl p-8 border border-zinc-200 dark:border-zinc-800 mb-12">
@@ -102,7 +102,7 @@ export default function ContactPage() {
         <div className="container-max max-w-2xl">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Let's scope your project.</h1>
           <p className="text-lg text-zinc-300">
-            Fill this out and we'll respond within 24 hours with initial thoughts — not a sales pitch.
+            Fill this out and we'll respond within 24 hours with initial thoughts - not a sales pitch.
           </p>
         </div>
       </section>

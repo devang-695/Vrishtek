@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
     // const response = await resend.emails.send({
     //   from: "noreply@vrishtek.com",
     //   to: email,
-    //   subject: "We received your inquiry — Vrishtek",
+    //   subject: "We received your inquiry - Vrishtek",
     //   html: `...`,
     // });
     //

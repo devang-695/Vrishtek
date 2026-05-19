@@ -78,12 +78,12 @@ export default function StackPage() {
       {
         name: "AWS (EC2 / ECS Fargate / RDS / S3 / CloudFront / SES)",
         description:
-          "We know AWS. We do not over-architect — we use the right service, not the most impressive one.",
+          "We know AWS. We do not over-architect - we use the right service, not the most impressive one.",
       },
       {
         name: "GitHub Actions",
         description:
-          "CI/CD on every PR. Lint, type-check, test, build, deploy — automated from day one, not added six months later.",
+          "CI/CD on every PR. Lint, type-check, test, build, deploy - automated from day one, not added six months later.",
       },
       {
         name: "Vercel",
@@ -117,7 +117,7 @@ export default function StackPage() {
         <section className="section-padding bg-white dark:bg-zinc-950">
           <div className="container-max text-center max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              What we build with — and why.
+              What we build with - and why.
             </h1>
             <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400">
               Technical decisions are product decisions. Here is how we think about our tools.

@@ -57,7 +57,7 @@ const RAW_NODES = [{"id": "next_env_d_ts", "label": "next-env.d.ts", "color": {"
 const RAW_EDGES = [{"from": "app_layout_tsx", "to": "layout_rootlayout", "label": "contains", "title": "contains [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "app_sitemap_ts", "to": "sitemap_sitemap", "label": "contains", "title": "contains [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "app_about_page_tsx", "to": "page_aboutpage", "label": "contains", "title": "contains [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "app_api_contact_route_ts", "to": "route_post", "label": "contains", "title": "contains [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "app_blog_page_tsx", "to": "page_getblogposts", "label": "contains", "title": "contains [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "app_blog_slug_page_tsx", "to": "page_blogpostpage", "label": "contains", "title": "contains [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "app_careers_page_tsx", "to": "page_careerspage", "label": "contains", "title": "contains [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "app_contact_page_tsx", "to": "page_handlechange", "label": "contains", "title": "contains [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "app_contact_page_tsx", "to": "page_handlesubmit", "label": "contains", "title": "contains [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "app_stack_page_tsx", "to": "page_stackpage", "label": "contains", "title": "contains [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "components_footer_tsx", "to": "footer_footer", "label": "contains", "title": "contains [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "components_theme_provider_tsx", "to": "theme_provider_themeprovider", "label": "contains", "title": "contains [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "readme_saas", "to": "claude_guide", "label": "conceptually_related_to", "title": "conceptually_related_to [INFERRED]", "dashes": true, "width": 1, "color": {"opacity": 0.35}, "confidence": "INFERRED"}];
 const LEGEND = [{"cid": 0, "color": "#4E79A7", "label": "Core Infrastructure", "count": 3}, {"cid": 1, "color": "#F28E2B", "label": "Blog Content", "count": 2}, {"cid": 2, "color": "#E15759", "label": "Documentation", "count": 2}, {"cid": 3, "color": "#76B7B2", "label": "Community 3", "count": 2}, {"cid": 4, "color": "#59A14F", "label": "Community 4", "count": 2}, {"cid": 5, "color": "#EDC948", "label": "Community 5", "count": 2}, {"cid": 6, "color": "#B07AA1", "label": "Community 6", "count": 2}, {"cid": 7, "color": "#FF9DA7", "label": "Community 7", "count": 2}, {"cid": 8, "color": "#9C755F", "label": "Community 8", "count": 2}, {"cid": 9, "color": "#BAB0AC", "label": "Community 9", "count": 2}, {"cid": 10, "color": "#4E79A7", "label": "Community 10", "count": 2}, {"cid": 11, "color": "#F28E2B", "label": "Community 11", "count": 2}, {"cid": 12, "color": "#E15759", "label": "Community 12", "count": 1}, {"cid": 13, "color": "#76B7B2", "label": "Community 13", "count": 1}, {"cid": 14, "color": "#59A14F", "label": "Community 14", "count": 1}, {"cid": 15, "color": "#EDC948", "label": "Community 15", "count": 1}, {"cid": 16, "color": "#B07AA1", "label": "Community 16", "count": 1}, {"cid": 17, "color": "#FF9DA7", "label": "Community 17", "count": 1}, {"cid": 18, "color": "#9C755F", "label": "Community 18", "count": 1}, {"cid": 19, "color": "#BAB0AC", "label": "Community 19", "count": 1}, {"cid": 20, "color": "#4E79A7", "label": "Community 20", "count": 1}, {"cid": 21, "color": "#F28E2B", "label": "Community 21", "count": 1}, {"cid": 22, "color": "#E15759", "label": "Community 22", "count": 1}];
 
-// HTML-escape helper — prevents XSS when injecting graph data into innerHTML
+// HTML-escape helper - prevents XSS when injecting graph data into innerHTML
 function esc(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 }
@@ -135,7 +135,7 @@ function focusNode(nodeId) {
   showInfo(nodeId);
 }
 
-// Track hovered node — hover detection is more reliable than click params
+// Track hovered node - hover detection is more reliable than click params
 let hoveredNodeId = null;
 network.on('hoverNode', params => {
   hoveredNodeId = params.node;
@@ -217,7 +217,7 @@ LEGEND.forEach(c => {
 // Render hyperedges as shaded regions
 const hyperedges = [];
 // afterDrawing passes ctx already transformed to network coordinate space.
-// Draw node positions raw — no manual pan/zoom/DPR math needed.
+// Draw node positions raw - no manual pan/zoom/DPR math needed.
 network.on('afterDrawing', function(ctx) {
     hyperedges.forEach(h => {
         const positions = h.nodes

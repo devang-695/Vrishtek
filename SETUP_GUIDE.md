@@ -105,7 +105,7 @@ const confirmationEmail = render(<ContactConfirmationEmail name={name} />);
 await resend.emails.send({
   from: process.env.CONTACT_EMAIL_FROM,
   to: email,
-  subject: "We received your inquiry — Vrishtek",
+  subject: "We received your inquiry - Vrishtek",
   html: confirmationEmail,
 });
 ```
@@ -115,7 +115,7 @@ await resend.emails.send({
 await resend.emails.send({
   from: process.env.CONTACT_EMAIL_FROM,
   to: email,
-  subject: "We received your inquiry — Vrishtek",
+  subject: "We received your inquiry - Vrishtek",
   html: `
     <p>Hi ${name},</p>
     <p>Thanks for reaching out to Vrishtek. We'll review your inquiry and get back to you within 24 hours.</p>

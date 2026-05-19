@@ -25,7 +25,7 @@ export default function ServicesPage() {
       id: "saas-architecture-development",
       title: "SaaS Architecture & Development",
       description:
-        "Multi-tenancy, subscription billing (Stripe), role-based access control, audit logs, and usage analytics — the infrastructure every SaaS needs but nobody wants to build from scratch.",
+        "Multi-tenancy, subscription billing (Stripe), role-based access control, audit logs, and usage analytics - the infrastructure every SaaS needs but nobody wants to build from scratch.",
       bestFor:
         "Founders who have validated a B2B idea and need it built right.",
       icon: <Zap className="w-12 h-12 text-yellow-600" />,

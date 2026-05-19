@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
@@ -49,6 +49,8 @@ const caseStudies = [
     stack: ["React", "Next.js", "PostgreSQL", "WebSockets", "TypeScript", "Prisma", "Tailwind CSS"],
     colorFrom: "from-blue-500",
     colorTo: "to-purple-600",
+    // Adding placeholder icon - in a real app, this would be an actual icon component
+    icon: <div className="w-6 h-6">📊</div>,
   },
   {
     id: "wealthflow",
@@ -94,6 +96,8 @@ const caseStudies = [
     stack: ["React Native", "FastAPI", "PostgreSQL", "Stripe", "Python", "TypeScript"],
     colorFrom: "from-green-500",
     colorTo: "to-teal-600",
+    // Adding placeholder icon - in a real app, this would be an actual icon component
+    icon: <div className="w-6 h-6">💰</div>,
   },
   // Add more case studies here as needed for other projects
 ];

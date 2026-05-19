@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { AnimatePresence } from "framer-motion";
 
 export const metadata: Metadata = {
-  title: "Vrishtek — Full-Stack Product Engineering Studio",
+  title: "Vrishtek - Full-Stack Product Engineering Studio",
   description:
     "Vrishtek builds full-stack digital products for startups and scale-ups. Next.js, Node.js, PostgreSQL, React Native. Based in India. Working globally.",
   keywords: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://vrishtek.com",
     siteName: "Vrishtek",
-    title: "Vrishtek — Full-Stack Product Engineering Studio",
+    title: "Vrishtek - Full-Stack Product Engineering Studio",
     description: "Engineered with intent. Building full-stack digital products.",
     images: [
       {
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vrishtek — Full-Stack Product Engineering Studio",
+    title: "Vrishtek - Full-Stack Product Engineering Studio",
     description: "Engineered with intent. Building full-stack digital products.",
   },
 };
