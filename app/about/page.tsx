@@ -1,15 +1,15 @@
 import Link from "next/link";
-import { Github, Linkedin } from "lucide-react";
+import { ExternalLink, Mail } from "lucide-react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
 export default function AboutPage() {
   const teamMember = {
-    name: "Devang Sharma",
+    name: "Devang Kushwah",
     title: "Founder & Principal Engineer",
     bio: "Civil Engineer turned 100xDev, with 3 years of product engineering at SBL Labs. Obsessed with building elegant, scalable software.",
-    github: "https://github.com/devang", // Placeholder
-    linkedin: "https://linkedin.com/in/devang", // Placeholder
+    github: "https://github.com/devang-695", // Placeholder
+    linkedin: "https://www.linkedin.com/in/devang-kushwaha-794340333/", // Placeholder
     avatar: "/devang-avatar.jpg", // Placeholder image
   };
 
@@ -51,7 +51,7 @@ export default function AboutPage() {
         <section className="section-padding pt-0 bg-white dark:bg-zinc-950">
           <div className="container-max max-w-4xl mx-auto text-lg text-zinc-700 dark:text-zinc-300 space-y-8">
             <p>
-              Vrishtek was founded by Devang Sharma, a Civil Engineer who transitioned into software development after realizing the profound impact well-engineered systems can have. His journey from self-taught developer to contributing to high-impact projects at 100xDevs and leading product engineering at SBL Labs for three years forged a deep understanding of what it takes to build software that truly lasts.
+              Vrishtek was founded by Devang Kushwah, a Civil Engineer who transitioned into software development after realizing the profound impact well-engineered systems can have. His journey from self-taught developer to contributing to high-impact projects at 100xDevs and leading product engineering at SBL Labs for three years forged a deep understanding of what it takes to build software that truly lasts.
             </p>
             <p>
               Vrishtek is not just another agency or a collection of freelancers. It's a focused studio with a strong point of view on how software should be built: with intent, precision, and an unwavering commitment to quality. We believe in crafting solutions that are not only functional but also elegant, scalable, and maintainable.
@@ -95,7 +95,7 @@ export default function AboutPage() {
                     className="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors"
                     aria-label="GitHub"
                   >
-                    <Github className="w-6 h-6" />
+                    <ExternalLink className="w-6 h-6" />
                   </a>
                   <a
                     href={teamMember.linkedin}
@@ -104,7 +104,7 @@ export default function AboutPage() {
                     className="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors"
                     aria-label="LinkedIn"
                   >
-                    <Linkedin className="w-6 h-6" />
+                    <Mail className="w-6 h-6" />
                   </a>
                 </div>
                 <p className="mt-12 text-sm text-zinc-500 italic max-w-xl">

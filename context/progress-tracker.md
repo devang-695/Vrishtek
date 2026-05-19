@@ -23,7 +23,7 @@ Polish visual design for professional appearance. Fix Turbopack error and improv
 - ✅ Built Feature Cards section with service highlights.
 - ✅ Created `/services` page with detailed service offerings (Full-Stack, SaaS, API Design, React Native, Consulting).
 - ✅ Created `/work` page with 4 case studies (StackPulse, WealthFlow, Job Board, Analytics Dashboard).
-- ✅ Created `/about` page with founder bio (Devang Sharma) and company values.
+- ✅ Created `/about` page with founder bio (Devang Kushwah) and company values.
 - ✅ Created `/stack` page documenting the full tech stack with technical justifications.
 - ✅ Created `/contact` page with inquiry form (frontend).
 - ✅ Created `/blog` page with MDX-based blog listing and 5 sample posts.

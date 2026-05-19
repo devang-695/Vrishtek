@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { fontDisplay, fontSans, fontMono } from "@/lib/fonts";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/components/theme-provider"; 
+import { AnimatePresence } from "framer-motion";
 
 export const metadata: Metadata = {
   title: "Vrishtek — Full-Stack Product Engineering Studio",
@@ -54,8 +55,10 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          {children}
+        <ThemeProvider attribute="class" defaultTheme="dark">
+          <AnimatePresence mode="wait">
+            {children}
+          </AnimatePresence>
         </ThemeProvider>
       </body>
     </html>

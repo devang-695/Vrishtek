@@ -155,7 +155,7 @@ To add more posts:
    date: 2024-01-15
    category: Next.js
    readingTime: 8 min read
-   author: Devang Sharma
+   author: Devang Kushwah
    ---
    ```
 

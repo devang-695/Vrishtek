@@ -137,7 +137,7 @@ npm run db:push          # Sync schema to database
    date: 2024-01-15
    category: Next.js
    readingTime: 5 min read
-   author: Devang Sharma
+   author: Devang Kushwah
    ---
    ```
 3. Write content in Markdown/MDX

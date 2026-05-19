@@ -56,7 +56,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="group rounded-xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all hover:shadow-xl">
+            <div className="group rounded-xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-teal-500/50 dark:hover:border-teal-500/50 transition-all hover:shadow-xl">
               <div className="h-48 bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center overflow-hidden">
                 <div className="w-full h-full bg-gradient-to-br from-zinc-700 to-zinc-800 flex items-center justify-center">
                   <span className="text-zinc-600 dark:text-zinc-400 font-mono text-sm">StackPulse</span>
@@ -79,12 +79,12 @@ export default function Home() {
                   <span className="text-xs text-zinc-500 dark:text-zinc-500 font-mono">
                     React · Next.js · PostgreSQL · WebSockets
                   </span>
-                  <ArrowRight className="w-4 h-4 text-amber-600 dark:text-amber-500 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 text-teal-600 dark:text-teal-400 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             </div>
 
-            <div className="group rounded-xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all hover:shadow-xl">
+            <div className="group rounded-xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-teal-500/50 dark:hover:border-teal-500/50 transition-all hover:shadow-xl">
               <div className="h-48 bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center overflow-hidden">
                 <div className="w-full h-full bg-gradient-to-br from-zinc-700 to-zinc-800 flex items-center justify-center">
                   <span className="text-zinc-600 dark:text-zinc-400 font-mono text-sm">WealthFlow</span>
@@ -179,7 +179,7 @@ export default function Home() {
                 <div className="absolute -left-3 -top-3 w-12 h-12 rounded-full bg-amber-600 text-white font-bold flex items-center justify-center font-display text-lg">
                   {item.step}
                 </div>
-                <div className="pt-12 pl-6 pb-6 rounded-xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+                <div className="pt-12 pl-6 pb-6 rounded-xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 border-l-4 border-l-teal-500">
                   <h3 className="font-semibold text-lg mb-3">{item.title}</h3>
                   <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">
                     {item.description}
@@ -223,14 +223,15 @@ export default function Home() {
             ].map((testimonial, idx) => (
               <div
                 key={idx}
-                className="p-8 rounded-xl bg-zinc-800/40 border border-zinc-700 hover:border-zinc-600 transition-colors"
+                className="p-8 rounded-xl bg-zinc-800/40 border border-zinc-700 hover:border-teal-500/50 transition-colors relative group"
               >
+                <div className="absolute top-0 left-0 w-1 h-12 bg-gradient-to-b from-teal-500 to-transparent rounded-l-xl opacity-0 group-hover:opacity-100 transition-opacity" />
                 <p className="text-sm mb-6 leading-relaxed text-zinc-300">
                   "{testimonial.quote}"
                 </p>
                 <div>
                   <p className="font-semibold text-white">{testimonial.author}</p>
-                  <p className="text-xs text-zinc-500">
+                  <p className="text-xs text-teal-400">
                     {testimonial.title} · {testimonial.company}
                   </p>
                 </div>
